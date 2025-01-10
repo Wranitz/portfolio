@@ -3,6 +3,9 @@
 *.pyo
 __pycache__/
 
+#ignore migrations
+portfolio/main/migrations/
+
 # Ignore virtual environment directories
 myenv/
 
