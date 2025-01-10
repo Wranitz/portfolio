@@ -16,6 +16,17 @@
     </div>
 </div>
 
+<div class = "project-lists">
+    {% for project in projects %}
+        <div class="project" data-name="{{ project.title|lower }}" data-tags="{{ tags.all | join:',' |lower }}">
+            <h2><a href="{% url 'project' project.id %}" >{{project.title}}</a> </h2>
+            <p>{{project.description}}</p>
+            <p>Tags: {{tags.all |join:','}}</p>
+        </div>
+            
+    {% endfor %}
+</div>
+
 {% endblock content %}
 
 {% block extra_js %}
