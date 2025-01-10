@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 
-# Tag model for the portfolio app
+# Tag model for the portfolio app so that projects can be tagged to make it easier to search for them
 
 class Tag(models.Model):
     name = models.CharField(max_length=100, unique= True)
@@ -12,7 +12,7 @@ class Tag(models.Model):
         return self.name
 
 
-# Projects model for the portfolio app
+# Projects model for the portfolio app with linked tag model and image model
 
 class Project(models.Model):
     title = models.CharField(max_length=100)
@@ -23,6 +23,7 @@ class Project(models.Model):
     def __str__(self):
         return self.title
     
+# Image model for the portfolio app to store images for the projects 
 
 class ProjectImage(models.Model):
     project = models.ForeignKey(
