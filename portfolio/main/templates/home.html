@@ -7,9 +7,15 @@
 {% endblock extrahead %}
 
 {% block content %}
-    <h1>Welcome to my portfolio</h1>
-    <p>Here you can find all my projects</p>
-    <p>Click on the links above to navigate through the website</p>
+<div class="filters">
+    <input type="text" id="name-search" placeholder="Search by name.....">
+    <div class="tags-list">
+        {% for tag in tags %}
+            <button class="tag" data-tag="{{ tag.name| lower }}">{{ tag.name }}</button>
+        {% endfor %}
+    </div>
+</div>
+
 {% endblock content %}
 
 {% block extra_js %}
